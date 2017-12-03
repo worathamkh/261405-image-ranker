@@ -14,7 +14,7 @@
         "version": "git add .",
         "postversion": "git push --follow-tags",
         "build-deb": "node build-deb.js",
-		"postinstall": "gulp default"
+        "postinstall": "gulp default"
     },
     "ava": {
         "files": [
@@ -57,6 +57,7 @@
         "glob": "^7.1.1",
         "global": "^4.3.1",
         "gulp-ava": "^0.18.0",
+        "gulp-cli": "^1.4.0",
         "helmet": "^3.9.0",
         "i18n": "^0.8.3",
         "method-override": "^2.3.10",
