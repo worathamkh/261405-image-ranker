@@ -8,13 +8,12 @@
         "build": "npm run clean && npm run sass && npm run copy",
         "copy": "ncp app dist",
         "sass": "node-sass --output-style compressed app/assets/scss/app.scss app/assets/rendered/style.css",
-        "start": "gulp",
+        "start": "gulp default",
         "clean": "rimraf dist",
         "preversion": "npm run test",
         "version": "git add .",
         "postversion": "git push --follow-tags",
         "build-deb": "node build-deb.js",
-        "postinstall": "gulp default"
     },
     "ava": {
         "files": [
