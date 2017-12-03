@@ -13,7 +13,8 @@
         "preversion": "npm run test",
         "version": "git add .",
         "postversion": "git push --follow-tags",
-        "build-deb": "node build-deb.js"
+        "build-deb": "node build-deb.js",
+		"postinstall": "gulp default"
     },
     "ava": {
         "files": [
