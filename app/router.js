@@ -39,9 +39,17 @@ module.exports.init = (app, config) => {
         vue: {
             head: {
                 meta: [{
-                    script: vueScript
+                    script: vueScript,
                 }, {
+					script: 'https://code.jquery.com/jquery-3.2.1.slim.min.js'
+				}, {
+					script: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'
+				}, {
+					script: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js'
+				}, {
                     style: 'assets/rendered/style.css'
+				}, {
+					style: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
                 }]
             }
         }
