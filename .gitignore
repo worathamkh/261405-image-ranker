@@ -12,3 +12,4 @@ debianpkg/
 .postinst
 geo.mmdb
 environment/
+.env

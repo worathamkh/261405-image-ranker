@@ -13,6 +13,7 @@ const validator = require('express-validator');
 const expressVue = require('express-vue');
 const oauth2Api = require('./api');
 const path = require('path');
+const mongoose = require('mongoose');
 
 module.exports.init = (app, config) => {
     //Setup
@@ -123,6 +124,10 @@ module.exports.init = (app, config) => {
     controllers.forEach(function (controller) {
         module.require(controller).default(router);
     });
+
+    const uri = process.env.MONGODB_URI;
+    // mongoose.Promise = global.Promise;
+    mongoose.connect(uri);
 
     app.use((req, res) => {
         const data = {
