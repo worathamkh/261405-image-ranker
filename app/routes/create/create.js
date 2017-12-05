@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 const generateAnimal = require('adjective-adjective-animal');
-const Tournament = require('./schemas/tournament');
+const Tournament = require('../../schemas/tournament');
 const multer = require('multer');
 const upload = multer({
     storage: multer.memoryStorage()
