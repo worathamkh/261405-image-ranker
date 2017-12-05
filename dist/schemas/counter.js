@@ -1,9 +1,12 @@
-const mongoose = require('mongoose');
+'use strict';
 
-const counterSchema = new mongoose.Schema({
+var mongoose = require('mongoose');
+
+var counterSchema = new mongoose.Schema({
     for: { type: String, index: true }, // for other schema
     run: { type: Number, default: 0 }
 });
 
-const Counter = mongoose.model('Counter', counterSchema);
+var Counter = mongoose.model('Counter', counterSchema);
 module.exports = Counter;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjaGVtYXMvY291bnRlci5qcyJdLCJuYW1lcyI6WyJtb25nb29zZSIsInJlcXVpcmUiLCJjb3VudGVyU2NoZW1hIiwiU2NoZW1hIiwiZm9yIiwidHlwZSIsIlN0cmluZyIsImluZGV4IiwicnVuIiwiTnVtYmVyIiwiZGVmYXVsdCIsIkNvdW50ZXIiLCJtb2RlbCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBTUEsV0FBV0MsUUFBUSxVQUFSLENBQWpCOztBQUVBLElBQU1DLGdCQUFnQixJQUFJRixTQUFTRyxNQUFiLENBQW9CO0FBQ3RDQyxTQUFLLEVBQUVDLE1BQU1DLE1BQVIsRUFBZ0JDLE9BQU8sSUFBdkIsRUFEaUMsRUFDRjtBQUNwQ0MsU0FBSyxFQUFFSCxNQUFNSSxNQUFSLEVBQWdCQyxTQUFTLENBQXpCO0FBRmlDLENBQXBCLENBQXRCOztBQUtBLElBQU1DLFVBQVVYLFNBQVNZLEtBQVQsQ0FBZSxTQUFmLEVBQTBCVixhQUExQixDQUFoQjtBQUNBVyxPQUFPQyxPQUFQLEdBQWlCSCxPQUFqQiIsImZpbGUiOiJzY2hlbWFzL2NvdW50ZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBtb25nb29zZSA9IHJlcXVpcmUoJ21vbmdvb3NlJyk7XG5cbmNvbnN0IGNvdW50ZXJTY2hlbWEgPSBuZXcgbW9uZ29vc2UuU2NoZW1hKHtcbiAgICBmb3I6IHsgdHlwZTogU3RyaW5nLCBpbmRleDogdHJ1ZSB9LCAvLyBmb3Igb3RoZXIgc2NoZW1hXG4gICAgcnVuOiB7IHR5cGU6IE51bWJlciwgZGVmYXVsdDogMCB9XG59KTtcblxuY29uc3QgQ291bnRlciA9IG1vbmdvb3NlLm1vZGVsKCdDb3VudGVyJywgY291bnRlclNjaGVtYSk7XG5tb2R1bGUuZXhwb3J0cyA9IENvdW50ZXI7XG4iXX0=

@@ -1,9 +1,11 @@
-// 
-const dotenv = require('dotenv');
-const Models = require('./models');
+'use strict';
 
-let envFile = 'development.env';
-const env = process.env.NODE_ENV || 'development';
+// 
+var dotenv = require('dotenv');
+var Models = require('./models');
+
+var envFile = 'development.env';
+var env = process.env.NODE_ENV || 'development';
 
 if (process.env.ENV !== undefined) {
     envFile = env + '.env';
@@ -13,6 +15,7 @@ dotenv.config({
     path: 'environment/' + envFile
 });
 
-const config = new Models.Config();
+var config = new Models.Config();
 
 module.exports = config;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpZy5qcyJdLCJuYW1lcyI6WyJkb3RlbnYiLCJyZXF1aXJlIiwiTW9kZWxzIiwiZW52RmlsZSIsImVudiIsInByb2Nlc3MiLCJOT0RFX0VOViIsIkVOViIsInVuZGVmaW5lZCIsImNvbmZpZyIsInBhdGgiLCJDb25maWciLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0EsSUFBTUEsU0FBU0MsUUFBUSxRQUFSLENBQWY7QUFDQSxJQUFNQyxTQUFTRCxRQUFRLFVBQVIsQ0FBZjs7QUFFQSxJQUFJRSxVQUFVLGlCQUFkO0FBQ0EsSUFBTUMsTUFBTUMsUUFBUUQsR0FBUixDQUFZRSxRQUFaLElBQXdCLGFBQXBDOztBQUVBLElBQUlELFFBQVFELEdBQVIsQ0FBWUcsR0FBWixLQUFvQkMsU0FBeEIsRUFBbUM7QUFDL0JMLGNBQVVDLE1BQU0sTUFBaEI7QUFDSDs7QUFFREosT0FBT1MsTUFBUCxDQUFjO0FBQ1ZDLFVBQU0saUJBQWlCUDtBQURiLENBQWQ7O0FBSUEsSUFBTU0sU0FBUyxJQUFJUCxPQUFPUyxNQUFYLEVBQWY7O0FBRUFDLE9BQU9DLE9BQVAsR0FBaUJKLE1BQWpCIiwiZmlsZSI6ImNvbmZpZy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIFxuY29uc3QgZG90ZW52ID0gcmVxdWlyZSgnZG90ZW52Jyk7XG5jb25zdCBNb2RlbHMgPSByZXF1aXJlKCcuL21vZGVscycpO1xuXG5sZXQgZW52RmlsZSA9ICdkZXZlbG9wbWVudC5lbnYnO1xuY29uc3QgZW52ID0gcHJvY2Vzcy5lbnYuTk9ERV9FTlYgfHwgJ2RldmVsb3BtZW50JztcblxuaWYgKHByb2Nlc3MuZW52LkVOViAhPT0gdW5kZWZpbmVkKSB7XG4gICAgZW52RmlsZSA9IGVudiArICcuZW52Jztcbn1cblxuZG90ZW52LmNvbmZpZyh7XG4gICAgcGF0aDogJ2Vudmlyb25tZW50LycgKyBlbnZGaWxlXG59KTtcblxuY29uc3QgY29uZmlnID0gbmV3IE1vZGVscy5Db25maWcoKTtcblxubW9kdWxlLmV4cG9ydHMgPSBjb25maWc7Il19
