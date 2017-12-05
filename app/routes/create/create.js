@@ -41,6 +41,7 @@ module.exports.default = (router) => {
                         description: req.body.description,
                         images: images.map((img) => {
                             return {
+                                id: img.id,
                                 url: img.link,
                                 score: 0
                             };

@@ -6,14 +6,15 @@
         </div>
 
         <div class="row text-center justify-content-center">
-            <div class="col-lg-8">
-                    <h1>{{ title }}</h1>
-                    <h3>{{ description }}</h3>
-                    <ul>
-                        <li v-for="url in images">
-                            <img :src="url">
-                        </li>
-                    </ul>
+            <div class="col-lg-10">
+                <h1>{{ title }}</h1><br>
+                <h3>{{ description }}</h3>
+                <ol>
+                    <li v-for="image in rankedImages">
+                        Score: {{ image.score }}
+                        <img :src="image.url">
+                    </li>
+                </ol>
             </div>
         </div>
 
@@ -31,7 +32,7 @@ export default {
         return {
             title: '',
             description: '',
-            images: []
+            rankedImages: []
         }
     }
 }

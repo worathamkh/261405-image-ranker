@@ -58,6 +58,7 @@
         "csurf": "^1.9.0",
         "del": "^3.0.0",
         "dotenv": "^4.0.0",
+        "elo-rank": "^1.0.3",
         "eslint": "^4.9.0",
         "eslint-plugin-ava": "^4.2.2",
         "express": "^4.16.2",

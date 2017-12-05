@@ -11,10 +11,10 @@
                 <h3>{{ description }}</h3>
                 <div class="row">
                     <div class="col-sm-6">
-                        <img :src="left" :alt="left">
+                        <a :href="'/tournament/' + key + '/' + left.id + '/' + right.id"><img :src="left.url"></a>
                     </div>
                     <div class="col-sm-6">
-                        <img :src="right" :alt="right">
+                        <a :href="'/tournament/' + key + '/' + right.id + '/' + left.id"><img :src="right.url"></a>
                     </div>
                 </div>
             </div>
@@ -34,6 +34,7 @@ export default {
         return {
             title: '',
             description: '',
+            key: '',
             left: '',
             right: ''
         }

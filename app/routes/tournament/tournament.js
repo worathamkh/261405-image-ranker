@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose');
 const Tournament = require('../../schemas/tournament');
+const EloRank = require('elo-rank');
+let elo = new EloRank(16);
 
 module.exports.default = (router) => {
     // router.post('/create', upload.array('images', 32), (req, res) => {
@@ -16,10 +18,11 @@ module.exports.default = (router) => {
             }
             const data = {
                 // csrfToken: req.csrfToken()
+                key: req.params.key,
                 title: tournament.title,
                 description: tournament.description,
-                left: tournament.images[leftId].url,
-                right: tournament.images[rightId].url
+                left: tournament.images[leftId],
+                right: tournament.images[rightId]
             };
             const vueOptions = {
                 head: {
@@ -29,43 +32,33 @@ module.exports.default = (router) => {
             res.renderVue('tournament/tournament', data, vueOptions);
         });
     });
-    //     generateAnimal('pascal').then((animal) => {
-    //         imgur.uploadImages(req.files.map((img) => img.path), 'File' [>, albumId <])
-    //             .then((images) => {
-    //                 let data = {
-    //                     key: animal,
-    //                     title: req.body.title,
-    //                     description: req.body.description,
-    //                     images: images.map((img) => {
-    //                         return {
-    //                             url: img.link,
-    //                             score: 0
-    //                         };
-    //                     }),
-    //                     history: []
-    //                 };
-    //                 let tournament = new Tournament(data);
-    //                 tournament.save((err, product) => {
-    //                     if (err) res.json({ success: false });
-    //                     res.json({ success: true, object: product });
-    //
-    //                     // const data = {
-    //                     //     title: 'Hello World',
-    //                     //     message: 'POST',
-    //                     //     body: req.body
-    //                     // };
-    //                     // const vueOptions = {
-    //                     //     head: {
-    //                     //         title: 'Tournament created'
-    //                     //     }
-    //                     // };
-    //                     // res.renderVue('post/post', data, vueOptions);
-    //                 });
-    //             })
-    //             .catch((err) => {
-    //                 console.error(err.message);
-    //                 res.send(503);
-    //             });
-    //     });
-    // });
+    router.get('/tournament/:key/:winner/:loser', (req, res) => {
+        Tournament.findOne({ key: req.params.key }, (err, tournament) => {
+            if (err) res.send(503);
+            if (tournament == null) res.json({ error: 'cannot find given key' });
+            else {
+                console.log(tournament);
+                let winnerId = tournament.images.findIndex((img) => img.id === req.params.winner);
+                let loserId = tournament.images.findIndex((img) => img.id === req.params.loser);
+                let winnerOldScore = tournament.images[winnerId].score;
+                let loserOldScore = tournament.images[loserId].score
+                let winnerExpectedScore = elo.getExpected(winnerOldScore, loserOldScore);
+                let loserExpectedScore = elo.getExpected(loserOldScore, winnerOldScore);
+                let winnerNewScore = elo.updateRating(winnerExpectedScore, 1, winnerOldScore);
+                let loserNewScore = elo.updateRating(loserExpectedScore, 0, loserOldScore);
+                tournament.images[winnerId].score = winnerNewScore;
+                tournament.images[loserId].score = loserNewScore;
+                let historyCount = tournament.history.length;
+                tournament.history.push({
+                    id: historyCount + 1,
+                    winner: req.params.winner,
+                    loser: req.params.loser
+                });
+                tournament.save((err, product) => {
+                    if (err) res.send(503);
+                    res.redirect('/tournament/' + req.params.key);
+                });
+            }
+        });
+    });
 };

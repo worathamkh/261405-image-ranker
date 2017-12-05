@@ -6,13 +6,14 @@ const tournamentSchema = new mongoose.Schema({
     title: String,
     description: String,
     images: [{
-        url: String, // key
+        id: String, // key
+        url: String,
         score: Number
     }],
     history: [{
-        // id: Number, // key (auto-incremental)
-        winner: String, // image url
-        loser: String // image url
+        id: Number, // key (auto-incremental)
+        winner: String, // image key
+        loser: String // image key
     }]
 });
 
