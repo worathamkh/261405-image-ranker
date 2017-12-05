@@ -7,7 +7,8 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form method="POST">
+                <form method="post" :action="'?_csrf=' + csrfToken" enctype="multipart/form-data">
+
                     <div class="form-group row">
                         <label for="title" class="col-2 col-form-label col-form-label-lg">Title</label>
                         <div class="col-10">
@@ -26,7 +27,7 @@
                             <input class="form-control-file" type="file" name="images" id="images" multiple>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary float-right">Create</button>
+                    <button type="submit" class="btn btn-primary float-right">Create</button>
                 </form>
             </div>
         </div>

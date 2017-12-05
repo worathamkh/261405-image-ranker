@@ -77,16 +77,16 @@ module.exports.init = (app, config) => {
     app.use(app.locals.rootPath, express.static(config.root));
 
     let sessionConfig = {
-        secret: 'CHANGE_ME_TOKEN',
+        secret: 'e2yWiUOYhU5biu8Rj9duTxrGxq6E1I9c',
         name: 'session',
         keys: [
-            'CHANGE_ME',
-            'ME_TOO_PLEASE'
+            'wbhgUD9bGku06AW2197eV380zuCMxWEC',
+            'qg9onpWUmJ3ChaXcOY5oIfN6g85JF6OE'
         ],
         resave: true,
         saveUninitialized: true,
         cookie: {
-            domain: 'foo.bar.com',
+            domain: 'image-ranker-261405.herokuapp.com',
             secure: false,
             httpOnly: true,
         }

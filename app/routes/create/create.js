@@ -11,18 +11,18 @@ const upload = multer({
 module.exports.default = (router) => {
     router.get('/create', (req, res) => {
         const data = {
-            title: 'Hello World'
+            csrfToken: req.csrfToken()
         };
         const vueOptions = {
             head: {
-                title: 'Express-Vue MVC Starter Kit'
+                title: 'Create new tournament'
             }
         };
         res.renderVue('create/create', data, vueOptions);
     });
     router.post('/create', upload.array('images', 32), (req, res) => {
         generateAnimal('pascal').then((animal) => {
-            let tournament = new Tournament({
+            let data = {
                 key: animal,
                 title: req.body.title,
                 description: req.body.description,
@@ -33,22 +33,25 @@ module.exports.default = (router) => {
                     };
                 }),
                 history: []
-            });
-            tournament.save((err) => {
-                if (err) res.send({ success: false });
-                res.send({ success: true });
+            };
+            console.log(JSON.stringify(data));
+            let tournament = new Tournament(data);
+            tournament.save((err, product) => {
+                if (err) res.json({ success: false });
+                res.json({ success: true, object: product });
+
+                // const data = {
+                //     title: 'Hello World',
+                //     message: 'POST',
+                //     body: req.body
+                // };
+                // const vueOptions = {
+                //     head: {
+                //         title: 'Tournament created'
+                //     }
+                // };
+                // res.renderVue('post/post', data, vueOptions);
             });
         });
-        // const data = {
-        //     title: 'Hello World',
-        //     message: 'POST',
-        //     body: req.body
-        // };
-        // const vueOptions = {
-        //     head: {
-        //         title: 'Post example'
-        //     }
-        // };
-        // res.renderVue('post/post', data, vueOptions);
     });
 };
