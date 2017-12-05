@@ -17,6 +17,7 @@
                         <a :href="'/tournament/' + key + '/' + right.id + '/' + left.id"><img :src="right.url"></a>
                     </div>
                 </div>
+                <a :href="'/ranking/' + key"><button class="btn btn-primary">View ranking</button></a>
             </div>
         </div>
 
