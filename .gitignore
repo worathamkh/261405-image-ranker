@@ -4,7 +4,6 @@ bower_components
 app/assets/rendered
 npm-debug.log
 newrelic_agent.log
-dist/
 coverage/
 .gulp-cache
 .nyc_output
