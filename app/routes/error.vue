@@ -17,7 +17,9 @@
 <script>
 export default {
     data: function () {
-        return {}
+        return {
+            debug: false
+        }
     }
 }
 </script>
