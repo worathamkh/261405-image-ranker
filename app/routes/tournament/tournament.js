@@ -37,7 +37,6 @@ module.exports.default = (router) => {
             if (err) res.send(503);
             if (tournament == null) res.json({ error: 'cannot find given key' });
             else {
-                console.log(tournament);
                 let winnerId = tournament.images.findIndex((img) => img.id === req.params.winner);
                 let loserId = tournament.images.findIndex((img) => img.id === req.params.loser);
                 let winnerOldScore = tournament.images[winnerId].score;
