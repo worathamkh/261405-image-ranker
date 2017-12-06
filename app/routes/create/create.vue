@@ -2,11 +2,12 @@
     <div class="container">
 
         <div class="masthead">
-            <h3 class="text-muted">Image Ranker</h3>
+            <h4 class="text-muted">Image Ranker</h4>
         </div>
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
+                <h3 class="inner-head">Create a new tournament</h3>
                 <form method="post" :action="'?_csrf=' + csrfToken" enctype="multipart/form-data">
 
                     <div class="form-group row">
@@ -55,5 +56,12 @@ export default {
 }
 .col > .form-control-file {
     margin-top: .5rem;
+}
+.masthead {
+    margin-bottom: .5rem;
+}
+.inner-head {
+    margin-top: 20px;
+    margin-bottom: 20px
 }
 </style>

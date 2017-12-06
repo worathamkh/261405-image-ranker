@@ -50,8 +50,8 @@ module.exports.default = (router) => {
                     };
                     let tournament = new Tournament(data);
                     tournament.save((err, product) => {
-                        if (err) res.json({ success: false });
-                        res.json({ success: true, object: product });
+                        if (err) res.send(503);
+                        res.redirect('/tournament/' + animal);
 
                         // const data = {
                         //     title: 'Hello World',

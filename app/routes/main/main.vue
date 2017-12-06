@@ -2,7 +2,7 @@
     <div class="container">
 
       <div class="masthead">
-        <h3 class="text-muted">Image Ranker</h3>
+        <h4 class="text-muted">Image Ranker</h4>
 
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3"> -->
         <!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> -->
@@ -42,7 +42,7 @@
       <div class="jumbotron">
         <h1>Rank things two at a time</h1>
         <p class="lead">Upload images and let your friends choose the better one side-by-side. The results are ranked using an Elo system.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Upload</a></p>
+        <p><a class="btn btn-lg btn-success" href="/create" role="button">Upload</a></p>
       </div>
 
       <!-- Example row of columns -->
@@ -50,17 +50,17 @@
         <div class="col-lg-4">
           <h2>No sign up</h2>
           <p>Don't waste time signing up. Just create your page and then send the link to your friends.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
         <div class="col-lg-4">
           <h2>Two at a time</h2>
           <p>No headache of trying to rate many things at a time. Just compare two things and decide which is better.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
         <div class="col-lg-4">
           <h2>Elo system</h2>
           <p>A rating system used in chess so popular you've probably heard it from a movie.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <!-- <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p> -->
         </div>
       </div>
 
@@ -81,5 +81,7 @@ export default {
 </script>
 
 <style lang="css">
-
+.masthead {
+    margin-bottom: .5rem;
+}
 </style>
