@@ -7,7 +7,7 @@ module.exports.default = (router) => {
         };
         const vueOptions = {
             head: {
-                title: 'Express-Vue MVC Starter Kit'
+                title: 'Image Ranker - rank things two at a time'
             }
         };
         res.renderVue('main/main', data, vueOptions);

@@ -1,9 +1,7 @@
-'use strict';
-
 // 
 function paramObject(object) {
-    var str = '';
-    for (var key in object) {
+    let str = '';
+    for (let key in object) {
         if (str != '') {
             str += '&';
         }
@@ -13,4 +11,3 @@ function paramObject(object) {
 }
 
 module.exports = paramObject;
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWxzL3BhcmFtVXRpbC5qcyJdLCJuYW1lcyI6WyJwYXJhbU9iamVjdCIsIm9iamVjdCIsInN0ciIsImtleSIsImVuY29kZVVSSUNvbXBvbmVudCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiI7O0FBQUE7QUFDQSxTQUFTQSxXQUFULENBQXFCQyxNQUFyQixFQUE2QjtBQUN6QixRQUFJQyxNQUFNLEVBQVY7QUFDQSxTQUFLLElBQUlDLEdBQVQsSUFBZ0JGLE1BQWhCLEVBQXdCO0FBQ3BCLFlBQUlDLE9BQU8sRUFBWCxFQUFlO0FBQ1hBLG1CQUFPLEdBQVA7QUFDSDtBQUNEQSxlQUFPQyxNQUFNLEdBQU4sR0FBWUMsbUJBQW1CSCxPQUFPRSxHQUFQLENBQW5CLENBQW5CO0FBQ0g7QUFDRCxXQUFPLE1BQU1ELEdBQWI7QUFDSDs7QUFFREcsT0FBT0MsT0FBUCxHQUFpQk4sV0FBakIiLCJmaWxlIjoidXRpbHMvcGFyYW1VdGlsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gXG5mdW5jdGlvbiBwYXJhbU9iamVjdChvYmplY3QpIHtcbiAgICBsZXQgc3RyID0gJyc7XG4gICAgZm9yIChsZXQga2V5IGluIG9iamVjdCkge1xuICAgICAgICBpZiAoc3RyICE9ICcnKSB7XG4gICAgICAgICAgICBzdHIgKz0gJyYnO1xuICAgICAgICB9XG4gICAgICAgIHN0ciArPSBrZXkgKyAnPScgKyBlbmNvZGVVUklDb21wb25lbnQob2JqZWN0W2tleV0pO1xuICAgIH1cbiAgICByZXR1cm4gJz8nICsgc3RyO1xufVxuXG5tb2R1bGUuZXhwb3J0cyA9IHBhcmFtT2JqZWN0O1xuIl19

@@ -1,18 +1,15 @@
-'use strict';
-
 // 
 
-module.exports.default = function (router) {
-    router.get('/', function (req, res) {
-        var data = {
+module.exports.default = (router) => {
+    router.get('/', (req, res) => {
+        const data = {
             title: 'Hello World'
         };
-        var vueOptions = {
+        const vueOptions = {
             head: {
-                title: 'Express-Vue MVC Starter Kit'
+                title: 'Image Ranker - rank things two at a time'
             }
         };
         res.renderVue('main/main', data, vueOptions);
     });
 };
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy9tYWluL21haW4uanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsImRlZmF1bHQiLCJyb3V0ZXIiLCJnZXQiLCJyZXEiLCJyZXMiLCJkYXRhIiwidGl0bGUiLCJ2dWVPcHRpb25zIiwiaGVhZCIsInJlbmRlclZ1ZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFFQUEsT0FBT0MsT0FBUCxDQUFlQyxPQUFmLEdBQXlCLFVBQUNDLE1BQUQsRUFBWTtBQUNqQ0EsV0FBT0MsR0FBUCxDQUFXLEdBQVgsRUFBZ0IsVUFBQ0MsR0FBRCxFQUFNQyxHQUFOLEVBQWM7QUFDMUIsWUFBTUMsT0FBTztBQUNUQyxtQkFBTztBQURFLFNBQWI7QUFHQSxZQUFNQyxhQUFhO0FBQ2ZDLGtCQUFNO0FBQ0ZGLHVCQUFPO0FBREw7QUFEUyxTQUFuQjtBQUtBRixZQUFJSyxTQUFKLENBQWMsV0FBZCxFQUEyQkosSUFBM0IsRUFBaUNFLFVBQWpDO0FBQ0gsS0FWRDtBQVdILENBWkQiLCJmaWxlIjoicm91dGVzL21haW4vbWFpbi5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIFxuXG5tb2R1bGUuZXhwb3J0cy5kZWZhdWx0ID0gKHJvdXRlcikgPT4ge1xuICAgIHJvdXRlci5nZXQoJy8nLCAocmVxLCByZXMpID0+IHtcbiAgICAgICAgY29uc3QgZGF0YSA9IHtcbiAgICAgICAgICAgIHRpdGxlOiAnSGVsbG8gV29ybGQnXG4gICAgICAgIH07XG4gICAgICAgIGNvbnN0IHZ1ZU9wdGlvbnMgPSB7XG4gICAgICAgICAgICBoZWFkOiB7XG4gICAgICAgICAgICAgICAgdGl0bGU6ICdFeHByZXNzLVZ1ZSBNVkMgU3RhcnRlciBLaXQnXG4gICAgICAgICAgICB9XG4gICAgICAgIH07XG4gICAgICAgIHJlcy5yZW5kZXJWdWUoJ21haW4vbWFpbicsIGRhdGEsIHZ1ZU9wdGlvbnMpO1xuICAgIH0pO1xufTsiXX0=
